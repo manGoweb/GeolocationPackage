@@ -2,7 +2,6 @@
 
 namespace Package; // todo: změň při vytvoření balíčku
 
-use Package\Router; // todo: změň při vytvoření balíčku
 use Nette\Configurator;
 use Nette\DI\Container;
 
