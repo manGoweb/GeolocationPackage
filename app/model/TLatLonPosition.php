@@ -11,11 +11,17 @@ namespace Clevis\Geolocation;
 trait TLatLonPosition {
 
 	/**
-	 * @return Position
+	 * @return Position|NULL
 	 */
 	public function getPosition()
 	{
-		return new Position($this->getValue('latitude'), $this->getValue('longitude'));
+		$lon = $this->getValue('latitude');
+		$lat = $this->getValue('longitude');
+		if ($lon === NULL || $lat === NULL)
+		{
+			return NULL;
+		}
+		return new Position($lon, $lat);
 	}
 
 	/**
