@@ -4,9 +4,19 @@
 
 parameters:
 	repositories:
-#		repositoryName: Namespace\RepositoryClass
+		geocodingResults: Clevis\Geolocation\GeocodingResultsRepository
+		geocodingQueries: Clevis\Geolocation\GeocodingQueriesRepository
+		geocodingPositions: Clevis\Geolocation\GeocodingPositionsRepository
 
 services:
-#	repositoryServiceName:
-#		class: %repositories.repositoryName%
-#		factory: @orm.getRepository(repositoryName)
+	geocodingCache: Clevis\Geolocation\OrmGeocodingCache
+
+	geocodingResultsRepository:
+		class: %repositories.geocodingResults%
+		factory: @orm.getRepository(geocodingResults)
+	geocodingQueriesRepository:
+		class: %repositories.geocodingQueries%
+		factory: @orm.getRepository(geocodingQueries)
+	geocodingPositionsRepository:
+		class: %repositories.geocodingPositions%
+		factory: @orm.getRepository(geocodingPositions)
