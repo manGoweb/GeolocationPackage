@@ -8,7 +8,7 @@ use Nette\Object;
 /**
  * Saves geocoding query results in database
  */
-class OrmGecodingCache extends Object implements IGeocodingCache
+class OrmGeocodingCache extends Object implements IGeocodingCache
 {
 
 	/** @var GeocodingPositionsRepository */
