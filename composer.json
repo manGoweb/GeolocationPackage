@@ -1,7 +1,7 @@
 {
-	"name": "clevis/skeleton-package",
+	"name": "clevis/geolocation-package",
 	"type": "clevis-skeleton-package",
-	"description": "Skeleton of packages for Skeleton21",
+	"description": "Geolocation support for Skeleton applications",
 	"homepage": "http://clevis.cz",
 	"license": "BSD-3-Clause",
 	"authors": [
@@ -13,8 +13,19 @@
 
 	"require": {
 		"php": ">= 5.3.7",
+		"clevis/geolocation-base": "@dev"
+	},
+	"require-dev": {
+		"nette/tester": "@dev",
 		"nette/nette": "@dev"
 	},
+
+	"repositories": [
+		{
+			"type": "vcs",
+			"url": "https://github.com/Clevis/GeolocationBase.git"
+		}
+	],
 
 	"autoload": {
 		"classmap": ["app/"]
