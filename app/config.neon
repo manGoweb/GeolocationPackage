@@ -13,10 +13,10 @@ services:
 
 	geocodingResultsRepository:
 		class: %repositories.geocodingResults%
-		factory: @orm.getRepository(geocodingResults)
+		factory: @orm::getRepository(geocodingResults)
 	geocodingQueriesRepository:
 		class: %repositories.geocodingQueries%
-		factory: @orm.getRepository(geocodingQueries)
+		factory: @orm::getRepository(geocodingQueries)
 	geocodingPositionsRepository:
 		class: %repositories.geocodingPositions%
-		factory: @orm.getRepository(geocodingPositions)
+		factory: @orm::getRepository(geocodingPositions)
