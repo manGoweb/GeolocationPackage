@@ -6,18 +6,9 @@ use Clevis\Skeleton\Repository;
 
 
 /**
- *
+ * @method GeocodingPosition getByPosition(Position $position)
  */
 class GeocodingPositionsRepository extends Repository
 {
-
-	/**
-	 * @param Position
-	 * @return GeocodingPosition
-	 */
-	public function getByPosition(Position $position)
-	{
-		return $this->mapper->getByLatitudeAndLongitude($position->latitude, $position->longitude);
-	}
-
+	//
 }

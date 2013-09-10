@@ -11,10 +11,9 @@ use DateTime;
 /**
  * Cached result of a geotagging request
  *
+ * @property Clevis\Geolocation\Position $position
  * @property Clevis\Geolocation\Address $address
  * @property-read string $addressHash
- * @property-read float $latitude
- * @property-read float $longitude
  * @property DateTime $insertedAt {default now}
  *
  * @property Orm\OneToMany $positions {1:m Clevis\Geolocation\GeocodingPositionsRepository $result}
@@ -22,14 +21,14 @@ use DateTime;
  */
 class GeocodingResult extends Entity
 {
-	use TLatLonPosition;
-
 
 	public function onBeforePersist(Orm\IRepository $repository)
 	{
+		parent::onBeforePersist($repository);
+
 		if ($this->isChanged('address'))
 		{
-			$this->setValue('addressHash', md5(serialize($this->getValue('address'))));
+			$this->setReadonlyValue('addressHash', md5(serialize($this->getValue('address'))));
 		}
 	}
 
