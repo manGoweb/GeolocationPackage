@@ -23,7 +23,7 @@ Balíčky se instalují *Composerem* pomocí *SkeletonPackageInstalleru*. Ten se
 
 Balíček přidejte do závislostí v souboru `composer.json` v projektu (do sekce require).
 
-Do sekce repositories přidejte další dvě adresy: tento repozitář a RestApiBase.
+Do sekce repositories přidejte další dvě adresy: tento repozitář a GeolocationBase.
 
 Spusťte `composer update --prefer-dist`.
 
